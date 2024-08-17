@@ -1,18 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Add new contact" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-08-17T01:20:35" hostname="MacBook-Pro-de-Yuberth.local" time="10.326">
+<testsuite name="Add new contact" tests="6" skipped="0" failures="4" errors="0" timestamp="2024-08-17T01:44:23" hostname="MacBook-Pro-de-Yuberth.local" time="8.078">
   <properties/>
-  <testcase name="Should be able to create new contacts when the user logs in" classname="Add new contact" time="2.295"/>
-  <testcase name="Should be able to delete the contact" classname="Add new contact" time="1.723"/>
-  <testcase name="Should be able to get the recently added contact" classname="Add new contact" time="1.69"/>
-  <testcase name="Should be able to get contacts list" classname="Add new contact" time="1.215"/>
-  <testcase name="Should be able to update just one attribute of the contact" classname="Add new contact" time="1.772"/>
-  <testcase name="Should be able to update the contact information" classname="Add new contact" time="1.63"/>
+  <testcase name="Should be able to create new contacts when the user logs in" classname="Add new contact" time="1.554">
+    <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;401&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;401&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at steps.LoginUserSteps.getToken(LoginUserSteps.java:21)
+	at steps.LoginUserSteps$ByteBuddy$SHj9iVHC.getToken$accessor$Rqn0wZms(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:218)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at steps.LoginUserSteps$ByteBuddy$SHj9iVHC.getToken(Unknown Source)
+	at stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(CreateContactStepDefinitions.java:36)
+	at ✽.Sam is logged into the application(file:///Users/yuberthruiz/Downloads/AutomationContact/src/test/resources/features/contacts.feature:8)
+</failure>
+  </testcase>
+  <testcase name="Should be able to delete the contact" classname="Add new contact" time="1.866"/>
+  <testcase name="Should be able to get the recently added contact" classname="Add new contact" time="1.133">
+    <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;401&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;401&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at steps.AddContactsSteps.addContact(AddContactsSteps.java:28)
+	at steps.AddContactsSteps$ByteBuddy$EOGC8QAV.addContact$accessor$smkcC6n6(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:218)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at steps.AddContactsSteps$ByteBuddy$EOGC8QAV.addContact(Unknown Source)
+	at stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(CreateContactStepDefinitions.java:41)
+	at ✽.Sam requested the add contact service(file:///Users/yuberthruiz/Downloads/AutomationContact/src/test/resources/features/contacts.feature:21)
+</failure>
+  </testcase>
+  <testcase name="Should be able to get contacts list" classname="Add new contact" time="0.662">
+    <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;401&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;401&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at steps.LoginUserSteps.getToken(LoginUserSteps.java:21)
+	at steps.LoginUserSteps$ByteBuddy$SHj9iVHC.getToken$accessor$Rqn0wZms(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:218)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at steps.LoginUserSteps$ByteBuddy$SHj9iVHC.getToken(Unknown Source)
+	at stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(CreateContactStepDefinitions.java:36)
+	at ✽.Sam is logged into the application(file:///Users/yuberthruiz/Downloads/AutomationContact/src/test/resources/features/contacts.feature:27)
+</failure>
+  </testcase>
+  <testcase name="Should be able to update just one attribute of the contact" classname="Add new contact" time="1.746"/>
+  <testcase name="Should be able to update the contact information" classname="Add new contact" time="1.116">
+    <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;401&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;401&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at steps.AddContactsSteps.addContact(AddContactsSteps.java:28)
+	at steps.AddContactsSteps$ByteBuddy$EOGC8QAV.addContact$accessor$smkcC6n6(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:218)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at steps.AddContactsSteps$ByteBuddy$EOGC8QAV.addContact(Unknown Source)
+	at stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(CreateContactStepDefinitions.java:41)
+	at ✽.Sam requested the add contact service(file:///Users/yuberthruiz/Downloads/AutomationContact/src/test/resources/features/contacts.feature:40)
+</failure>
+  </testcase>
   <system-out><![CDATA[
 @contacts @smoke @newcontact
 Scenario: Should be able to create new contacts when the user logs in ?[90m# src/test/resources/features/contacts.feature:7?[0m
-  ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m                            ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
-  ?[32mWhen ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the add contact service?[0m                          ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
-  ?[32mThen ?[0m?[32mhe should see the contact created successfully?[0m                 ?[90m# stepdefinitions.CreateContactStepDefinitions.user_should_see_the_new_created_contact()?[0m
+  ?[31mGiven ?[0m?[31m?[0m?[31m?[1mSam?[0m?[31m is logged into the application?[0m                            ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
+      ?[31mjava.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <401>.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at steps.LoginUserSteps.getToken(LoginUserSteps.java:21)
+	at steps.LoginUserSteps$ByteBuddy$SHj9iVHC.getToken$accessor$Rqn0wZms(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:218)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at steps.LoginUserSteps$ByteBuddy$SHj9iVHC.getToken(Unknown Source)
+	at stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(CreateContactStepDefinitions.java:36)
+	at ✽.Sam is logged into the application(file:///Users/yuberthruiz/Downloads/AutomationContact/src/test/resources/features/contacts.feature:8)
+?[0m
+  ?[36mWhen ?[0m?[36m?[0m?[36m?[1mSam?[0m?[36m requested the add contact service?[0m                          ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
+  ?[36mThen ?[0m?[36mhe should see the contact created successfully?[0m                 ?[90m# stepdefinitions.CreateContactStepDefinitions.user_should_see_the_new_created_contact()?[0m
 
 @contacts @smoke @newcontact
 Scenario: Should be able to delete the contact       ?[90m# src/test/resources/features/contacts.feature:12?[0m
@@ -25,15 +239,91 @@ Scenario: Should be able to delete the contact       ?[90m# src/test/resources/f
 @contacts @smoke @newcontact
 Scenario: Should be able to get the recently added contact  ?[90m# src/test/resources/features/contacts.feature:19?[0m
   ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m                  ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
-  ?[32mAnd ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the add contact service?[0m                 ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
-  ?[32mWhen ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the contact service?[0m                    ?[90m# stepdefinitions.GetContactStepDefinitions.user_requested_the_contact_service(java.lang.String)?[0m
-  ?[32mThen ?[0m?[32mhe should see the contact requested was successfully?[0m ?[90m# stepdefinitions.GetContactStepDefinitions.user_should_see_the_contact_requested()?[0m
+  ?[31mAnd ?[0m?[31m?[0m?[31m?[1mSam?[0m?[31m requested the add contact service?[0m                 ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
+      ?[31mjava.lang.AssertionError: 1 expectation failed.
+Expected status code <201> but was <401>.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at steps.AddContactsSteps.addContact(AddContactsSteps.java:28)
+	at steps.AddContactsSteps$ByteBuddy$EOGC8QAV.addContact$accessor$smkcC6n6(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:218)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at steps.AddContactsSteps$ByteBuddy$EOGC8QAV.addContact(Unknown Source)
+	at stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(CreateContactStepDefinitions.java:41)
+	at ✽.Sam requested the add contact service(file:///Users/yuberthruiz/Downloads/AutomationContact/src/test/resources/features/contacts.feature:21)
+?[0m
+  ?[36mWhen ?[0m?[36m?[0m?[36m?[1mSam?[0m?[36m requested the contact service?[0m                    ?[90m# stepdefinitions.GetContactStepDefinitions.user_requested_the_contact_service(java.lang.String)?[0m
+  ?[36mThen ?[0m?[36mhe should see the contact requested was successfully?[0m ?[90m# stepdefinitions.GetContactStepDefinitions.user_should_see_the_contact_requested()?[0m
 
 @contacts @smoke @newcontact
 Scenario: Should be able to get contacts list        ?[90m# src/test/resources/features/contacts.feature:26?[0m
-  ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m           ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
-  ?[32mWhen ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the list of contacts?[0m            ?[90m# stepdefinitions.GetContactListStepDefinitions.user_requested_the_list_of_contacts(java.lang.String)?[0m
-  ?[32mThen ?[0m?[32mhe should see a successfully request response?[0m ?[90m# stepdefinitions.GetContactListStepDefinitions.user_should_see_the_created_contacts()?[0m
+  ?[31mGiven ?[0m?[31m?[0m?[31m?[1mSam?[0m?[31m is logged into the application?[0m           ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
+      ?[31mjava.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <401>.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at steps.LoginUserSteps.getToken(LoginUserSteps.java:21)
+	at steps.LoginUserSteps$ByteBuddy$SHj9iVHC.getToken$accessor$Rqn0wZms(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:218)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at steps.LoginUserSteps$ByteBuddy$SHj9iVHC.getToken(Unknown Source)
+	at stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(CreateContactStepDefinitions.java:36)
+	at ✽.Sam is logged into the application(file:///Users/yuberthruiz/Downloads/AutomationContact/src/test/resources/features/contacts.feature:27)
+?[0m
+  ?[36mWhen ?[0m?[36m?[0m?[36m?[1mSam?[0m?[36m requested the list of contacts?[0m            ?[90m# stepdefinitions.GetContactListStepDefinitions.user_requested_the_list_of_contacts(java.lang.String)?[0m
+  ?[36mThen ?[0m?[36mhe should see a successfully request response?[0m ?[90m# stepdefinitions.GetContactListStepDefinitions.user_should_see_the_created_contacts()?[0m
 
 @contacts @smoke @newcontact
 Scenario: Should be able to update just one attribute of the contact ?[90m# src/test/resources/features/contacts.feature:31?[0m
@@ -46,10 +336,48 @@ Scenario: Should be able to update just one attribute of the contact ?[90m# src/
 @contacts @smoke @newcontact
 Scenario: Should be able to update the contact information ?[90m# src/test/resources/features/contacts.feature:38?[0m
   ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m                 ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
-  ?[32mAnd ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the add contact service?[0m                ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
-  ?[32mAnd ?[0m?[32mhe should see the contact created successfully?[0m       ?[90m# stepdefinitions.CreateContactStepDefinitions.user_should_see_the_new_created_contact()?[0m
-  ?[32mWhen ?[0m?[32mSam try to update the contact?[0m                       ?[90m# stepdefinitions.UpdateContactStepDefinitons.user_try_to_update_the_contact()?[0m
-  ?[32mThen ?[0m?[32mhe should see a successfully response?[0m               ?[90m# stepdefinitions.UpdateContactStepDefinitons.user_should_see_the_contact_updated()?[0m
+  ?[31mAnd ?[0m?[31m?[0m?[31m?[1mSam?[0m?[31m requested the add contact service?[0m                ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
+      ?[31mjava.lang.AssertionError: 1 expectation failed.
+Expected status code <201> but was <401>.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at steps.AddContactsSteps.addContact(AddContactsSteps.java:28)
+	at steps.AddContactsSteps$ByteBuddy$EOGC8QAV.addContact$accessor$smkcC6n6(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:218)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at steps.AddContactsSteps$ByteBuddy$EOGC8QAV.addContact(Unknown Source)
+	at stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(CreateContactStepDefinitions.java:41)
+	at ✽.Sam requested the add contact service(file:///Users/yuberthruiz/Downloads/AutomationContact/src/test/resources/features/contacts.feature:40)
+?[0m
+  ?[36mAnd ?[0m?[36mhe should see the contact created successfully?[0m       ?[90m# stepdefinitions.CreateContactStepDefinitions.user_should_see_the_new_created_contact()?[0m
+  ?[36mWhen ?[0m?[36mSam try to update the contact?[0m                       ?[90m# stepdefinitions.UpdateContactStepDefinitons.user_try_to_update_the_contact()?[0m
+  ?[36mThen ?[0m?[36mhe should see a successfully response?[0m               ?[90m# stepdefinitions.UpdateContactStepDefinitons.user_should_see_the_contact_updated()?[0m
 ]]></system-out>
   <system-err><![CDATA[[Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
@@ -59,14 +387,16 @@ Scenario: Should be able to update the contact information ?[90m# src/test/resou
 
 Should be able to create new contacts when the user logs in(add-new-contact;should-be-able-to-create-new-contacts-when-the-user-logs-in)
 --------------------------------------------------------------------------------
-[Test worker] INFO  - 
-  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
- |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
-   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
-   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+[Test worker] ERROR  - 
+  _____   ___   ___   _____     ___     _     ___   _      ___   ___  
+ |_   _| | __| / __| |_   _|   | __|   /_\   |_ _| | |    | __| |   \ 
+   | |   | _|  \__ \   | |     | _|   / _ \   | |  | |__  | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___| |____| |___| |___/ 
 
 Should be able to create new contacts when the user logs in
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+[Test worker] ERROR  -     Test failed at step: #actor is logged into the application
+[Test worker] ERROR  -     1 expectation failed.Expected status code <200> but was <401>.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
  |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
@@ -91,14 +421,16 @@ Should be able to delete the contact
 
 Should be able to get the recently added contact(add-new-contact;should-be-able-to-get-the-recently-added-contact)
 --------------------------------------------------------------------------------
-[Test worker] INFO  - 
-  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
- |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
-   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
-   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+[Test worker] ERROR  - 
+  _____   ___   ___   _____     ___     _     ___   _      ___   ___  
+ |_   _| | __| / __| |_   _|   | __|   /_\   |_ _| | |    | __| |   \ 
+   | |   | _|  \__ \   | |     | _|   / _ \   | |  | |__  | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___| |____| |___| |___/ 
 
 Should be able to get the recently added contact
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+[Test worker] ERROR  -     Test failed at step: #actor requested the add contact service
+[Test worker] ERROR  -     1 expectation failed.Expected status code <201> but was <401>.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
  |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
@@ -107,14 +439,16 @@ Should be able to get the recently added contact
 
 Should be able to get contacts list(add-new-contact;should-be-able-to-get-contacts-list)
 --------------------------------------------------------------------------------
-[Test worker] INFO  - 
-  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
- |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
-   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
-   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+[Test worker] ERROR  - 
+  _____   ___   ___   _____     ___     _     ___   _      ___   ___  
+ |_   _| | __| / __| |_   _|   | __|   /_\   |_ _| | |    | __| |   \ 
+   | |   | _|  \__ \   | |     | _|   / _ \   | |  | |__  | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___| |____| |___| |___/ 
 
 Should be able to get contacts list
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+[Test worker] ERROR  -     Test failed at step: #actor is logged into the application
+[Test worker] ERROR  -     1 expectation failed.Expected status code <200> but was <401>.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
  |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
@@ -139,13 +473,15 @@ Should be able to update just one attribute of the contact
 
 Should be able to update the contact information(add-new-contact;should-be-able-to-update-the-contact-information)
 --------------------------------------------------------------------------------
-[Test worker] INFO  - 
-  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
- |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
-   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
-   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+[Test worker] ERROR  - 
+  _____   ___   ___   _____     ___     _     ___   _      ___   ___  
+ |_   _| | __| / __| |_   _|   | __|   /_\   |_ _| | |    | __| |   \ 
+   | |   | _|  \__ \   | |     | _|   / _ \   | |  | |__  | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___| |____| |___| |___/ 
 
 Should be able to update the contact information
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+[Test worker] ERROR  -     Test failed at step: #actor requested the add contact service
+[Test worker] ERROR  -     1 expectation failed.Expected status code <201> but was <401>.
 ]]></system-err>
 </testsuite>

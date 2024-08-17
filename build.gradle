@@ -61,8 +61,3 @@ test {
 gradle.startParameter.continueOnFailure = true
 
 test.finalizedBy(aggregate)
-
-test {
-    systemProperty "dealers_quantity", System.getProperty("dealers_quantity") ?: "1"
-    systemProperty "env", System.getProperty("env") ?: "stg"
-}
