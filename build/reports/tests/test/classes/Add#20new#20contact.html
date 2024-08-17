@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">6</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2.318s</div>
+<div class="counter">10.325s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,7 +82,32 @@
 </thead>
 <tr>
 <td class="success">Should be able to create new contacts when the user logs in</td>
-<td class="success">2.318s</td>
+<td class="success">2.295s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Should be able to delete the contact</td>
+<td class="success">1.723s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Should be able to get contacts list</td>
+<td class="success">1.215s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Should be able to get the recently added contact</td>
+<td class="success">1.690s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Should be able to update just one attribute of the contact</td>
+<td class="success">1.772s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Should be able to update the contact information</td>
+<td class="success">1.630s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,10 +117,47 @@
 <span class="code">
 <pre>
 @contacts @smoke @newcontact
-Scenario: Should be able to create new contacts when the user logs in ?[90m# src/test/resources/features/add_contact.feature:7?[0m
+Scenario: Should be able to create new contacts when the user logs in ?[90m# src/test/resources/features/contacts.feature:7?[0m
   ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m                            ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
   ?[32mWhen ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the add contact service?[0m                          ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
   ?[32mThen ?[0m?[32mhe should see the contact created successfully?[0m                 ?[90m# stepdefinitions.CreateContactStepDefinitions.user_should_see_the_new_created_contact()?[0m
+
+@contacts @smoke @newcontact
+Scenario: Should be able to delete the contact       ?[90m# src/test/resources/features/contacts.feature:12?[0m
+  ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m           ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the add contact service?[0m          ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mhe should see the contact created successfully?[0m ?[90m# stepdefinitions.CreateContactStepDefinitions.user_should_see_the_new_created_contact()?[0m
+  ?[32mWhen ?[0m?[32mSam try to delete the contact?[0m                 ?[90m# stepdefinitions.DeleteContactStepDefinitions.user_try_to_delete_the_contact()?[0m
+  ?[32mThen ?[0m?[32mhe should see the contact was deleted?[0m         ?[90m# stepdefinitions.DeleteContactStepDefinitions.he_should_see_the_contact_was_deleted()?[0m
+
+@contacts @smoke @newcontact
+Scenario: Should be able to get the recently added contact  ?[90m# src/test/resources/features/contacts.feature:19?[0m
+  ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m                  ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the add contact service?[0m                 ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the contact service?[0m                    ?[90m# stepdefinitions.GetContactStepDefinitions.user_requested_the_contact_service(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mhe should see the contact requested was successfully?[0m ?[90m# stepdefinitions.GetContactStepDefinitions.user_should_see_the_contact_requested()?[0m
+
+@contacts @smoke @newcontact
+Scenario: Should be able to get contacts list        ?[90m# src/test/resources/features/contacts.feature:26?[0m
+  ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m           ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the list of contacts?[0m            ?[90m# stepdefinitions.GetContactListStepDefinitions.user_requested_the_list_of_contacts(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mhe should see a successfully request response?[0m ?[90m# stepdefinitions.GetContactListStepDefinitions.user_should_see_the_created_contacts()?[0m
+
+@contacts @smoke @newcontact
+Scenario: Should be able to update just one attribute of the contact ?[90m# src/test/resources/features/contacts.feature:31?[0m
+  ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m                           ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the add contact service?[0m                          ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mhe should see the contact created successfully?[0m                 ?[90m# stepdefinitions.CreateContactStepDefinitions.user_should_see_the_new_created_contact()?[0m
+  ?[32mWhen ?[0m?[32mSam try to update just one attribute of the contact?[0m           ?[90m# stepdefinitions.UpdateContactStepDefinitons.user_try_to_update_just_one_attribute_of_the_contact()?[0m
+  ?[32mThen ?[0m?[32mhe should see a successfully response?[0m                         ?[90m# stepdefinitions.UpdateContactStepDefinitons.user_should_see_the_contact_updated()?[0m
+
+@contacts @smoke @newcontact
+Scenario: Should be able to update the contact information ?[90m# src/test/resources/features/contacts.feature:38?[0m
+  ?[32mGiven ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m is logged into the application?[0m                 ?[90m# stepdefinitions.CreateContactStepDefinitions.user_is_logged_in_the_application(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32m?[0m?[32m?[1mSam?[0m?[32m requested the add contact service?[0m                ?[90m# stepdefinitions.CreateContactStepDefinitions.user_requested_the_add_contact_service(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mhe should see the contact created successfully?[0m       ?[90m# stepdefinitions.CreateContactStepDefinitions.user_should_see_the_new_created_contact()?[0m
+  ?[32mWhen ?[0m?[32mSam try to update the contact?[0m                       ?[90m# stepdefinitions.UpdateContactStepDefinitons.user_try_to_update_the_contact()?[0m
+  ?[32mThen ?[0m?[32mhe should see a successfully response?[0m               ?[90m# stepdefinitions.UpdateContactStepDefinitons.user_should_see_the_contact_updated()?[0m
 </pre>
 </span>
 </div>
@@ -118,6 +180,86 @@ Should be able to create new contacts when the user logs in(add-new-contact;shou
 
 Should be able to create new contacts when the user logs in
 ----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Should be able to delete the contact(add-new-contact;should-be-able-to-delete-the-contact)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Should be able to delete the contact
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Should be able to get the recently added contact(add-new-contact;should-be-able-to-get-the-recently-added-contact)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Should be able to get the recently added contact
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Should be able to get contacts list(add-new-contact;should-be-able-to-get-contacts-list)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Should be able to get contacts list
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Should be able to update just one attribute of the contact(add-new-contact;should-be-able-to-update-just-one-attribute-of-the-contact)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Should be able to update just one attribute of the contact
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Should be able to update the contact information(add-new-contact;should-be-able-to-update-the-contact-information)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Should be able to update the contact information
+----------------------------------------------------------------------
 </pre>
 </span>
 </div>
@@ -129,7 +271,7 @@ Should be able to create new contacts when the user logs in
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.3</a> at Aug 16, 2024, 5:08:23 PM</p>
+<a href="http://www.gradle.org">Gradle 8.3</a> at Aug 16, 2024, 8:20:45 PM</p>
 </div>
 </div>
 </body>

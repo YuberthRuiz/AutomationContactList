@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        plugin = {"pretty"}
-        ,glue = {"stepdefinitions"}
-        ,features = "src/test/resources/features"
-        ,tags = "@logout"
+        plugin = {"pretty"},
+        glue = {"stepdefinitions"},
+        features = "src/test/resources/features/users.feature"
+
 )
 public class RunnerUsers {
 }

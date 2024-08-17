@@ -6,10 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        plugin = {"pretty"}
-        ,glue = "stepdefinitions"
-        ,features = "src/test/resources/features"
-        ,tags = "@smoke"
+        plugin = {"pretty"},
+        glue = "stepdefinitions",
+        features = "src/test/resources/features/contacts.feature"
 )
 public class RunnerContacts {
 }
