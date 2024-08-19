@@ -8,6 +8,8 @@ import net.serenitybdd.annotations.Step;
 import java.io.File;
 
 public class LoginUserSteps {
+
+    AddUsersSteps addUsersSteps;
     public static String token;
     @Before
     public void setupBaseUrl(){
@@ -21,7 +23,5 @@ public class LoginUserSteps {
                 .then().statusCode(200)
                 .extract().response();
         token = response.jsonPath().getString("token");
-        if(response.getStatusCode() != 200)
-            System.out.println(response.jsonPath().getString("message"));
     }
 }

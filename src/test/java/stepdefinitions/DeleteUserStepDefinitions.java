@@ -25,8 +25,8 @@ public class DeleteUserStepDefinitions {
     @Steps(shared = true)
     AddUsersSteps addUsersSteps;
 
-    @When("Sam requested the delete user service")
-    public int user_requested_the_delete_user_service() {
+    @When("^(.*) requested the delete user service")
+    public int user_requested_the_delete_user_service(String actor) {
         response = deleteUsersSteps.deleteUser();
         statusCode = response.getStatusCode();
         return statusCode;

@@ -1,5 +1,5 @@
 @users @smoke @newuser
-Feature: Add new user
+Feature: Users functionalities
   To make smoke testing
   As a contact list app user
   I want to be able to create new users

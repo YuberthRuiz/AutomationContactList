@@ -55,7 +55,6 @@ dependencies {
 test {
     testLogging.showStandardStreams = true
     systemProperties System.getProperties()
-    maxParallelForks = Runtime.runtime.availableProcessors()
 }
 
 gradle.startParameter.continueOnFailure = true

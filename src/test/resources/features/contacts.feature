@@ -1,5 +1,5 @@
 @contacts @smoke @newcontact
-Feature: Add new contact
+Feature: Contacts functionalities
   To make smoke testing
   As a contact list app user
   I want to be able to create new contacts
