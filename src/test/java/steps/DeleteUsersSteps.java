@@ -6,6 +6,9 @@ import io.restassured.response.Response;
 import static steps.LoginUserSteps.token;
 
 public class DeleteUsersSteps {
+    /**
+     * @return response for my own user
+     */
     public Response deleteUser(){
         Response response = RestAssured.given()
                 .contentType("application/json")

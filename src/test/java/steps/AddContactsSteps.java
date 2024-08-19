@@ -18,6 +18,11 @@ public class AddContactsSteps {
 
     @Steps(shared = true)
     LoginUserSteps loginUserSteps;
+
+    /**
+     * @param user
+     * @return status response from add contacts request
+     */
     @Step("#actor requested the add contact service")
     public int addContact(String user) {
         File addContact = new File("src/test/resources/json/addContact.json");
@@ -31,6 +36,9 @@ public class AddContactsSteps {
         return statusCode;
     }
 
+    /**
+     * @return contact id from contacts
+     */
     @Step("#actor should see the newly created contact")
     public String idNewContact() {
         idContact = responseNewContact.jsonPath().getString("_id");

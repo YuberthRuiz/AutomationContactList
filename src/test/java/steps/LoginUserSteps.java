@@ -15,6 +15,10 @@ public class LoginUserSteps {
     public void setupBaseUrl(){
         RestAssured.baseURI = "https://thinking-tester-contact-list.herokuapp.com";
     }
+
+    /**
+     * @param file to enter in the app whit a registered user and generate token
+     */
     @Step("#actor is logged into the application")
     public void getToken(File file){
         Response response = RestAssured.given().body(file)

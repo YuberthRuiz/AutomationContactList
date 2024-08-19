@@ -11,7 +11,12 @@ import static steps.LoginUserSteps.token;
 public class AddUsersSteps {
     Response responseNewUser;
     int statusCode;
-    String idContact;
+    String idUser;
+
+    /**
+     * @param file with json to create new user
+     * @return
+     */
     @Step("#actor requested the add user service")
     public int addUser(File file) {
         responseNewUser = RestAssured.given().body(file)
@@ -24,9 +29,12 @@ public class AddUsersSteps {
         return statusCode;
     }
 
+    /**
+     * @return id of the user
+     */
     @Step("#actor should see the newly created user")
     public String idNewUser() {
-        idContact = responseNewUser.jsonPath().getString("user._id");
-        return idContact;
+        idUser = responseNewUser.jsonPath().getString("user._id");
+        return idUser;
     }
 }

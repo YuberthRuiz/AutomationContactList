@@ -8,6 +8,9 @@ import java.io.File;
 
 import static steps.LoginUserSteps.token;
 
+/**
+ * Update an attribute of my own user
+ */
 public class UpdateUsersSteps {
     @Step("#actor requested the update user service")
     public Response updateUser(File updateUserJson){
