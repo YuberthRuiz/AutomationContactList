@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Contacts functionalities" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-08-19T17:56:13" hostname="MacBook-Pro-de-Yuberth.local" time="10.692">
+<testsuite name="Contacts functionalities" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-08-19T20:06:11" hostname="MacBook-Pro-de-Yuberth.local" time="10.159">
   <properties/>
-  <testcase name="Should be able to create new contacts when the user logs in" classname="Contacts functionalities" time="2.404"/>
-  <testcase name="Should be able to delete the contact" classname="Contacts functionalities" time="1.714"/>
-  <testcase name="Should be able to get the recently added contact" classname="Contacts functionalities" time="2.17"/>
-  <testcase name="Should be able to get contacts list" classname="Contacts functionalities" time="1.177"/>
-  <testcase name="Should be able to update just one attribute of the contact" classname="Contacts functionalities" time="1.641"/>
-  <testcase name="Should be able to update the contact information" classname="Contacts functionalities" time="1.585"/>
+  <testcase name="Should be able to create new contacts when the user logs in" classname="Contacts functionalities" time="2.323"/>
+  <testcase name="Should be able to delete the contact" classname="Contacts functionalities" time="1.628"/>
+  <testcase name="Should be able to get the recently added contact" classname="Contacts functionalities" time="1.729"/>
+  <testcase name="Should be able to get contacts list" classname="Contacts functionalities" time="1.056"/>
+  <testcase name="Should be able to update just one attribute of the contact" classname="Contacts functionalities" time="1.651"/>
+  <testcase name="Should be able to update the contact information" classname="Contacts functionalities" time="1.77"/>
   <system-out><![CDATA[
 @contacts @smoke @newcontact
 Scenario: Should be able to create new contacts when the user logs in ?[90m# src/test/resources/features/contacts.feature:7?[0m

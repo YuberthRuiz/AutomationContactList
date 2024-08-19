@@ -2,7 +2,7 @@
 Feature: Contacts functionalities
   To make smoke testing
   As a contact list app user
-  I want to be able to create new contacts
+  I want to create, update and delete new contacts
 
   Scenario: Should be able to create new contacts when the user logs in
     Given Sam is logged into the application
