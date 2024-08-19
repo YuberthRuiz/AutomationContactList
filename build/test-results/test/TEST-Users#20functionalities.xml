@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Users functionalities" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-08-19T17:32:59" hostname="MacBook-Pro-de-Yuberth.local" time="8.401">
+<testsuite name="Users functionalities" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-08-19T17:56:23" hostname="MacBook-Pro-de-Yuberth.local" time="8.32">
   <properties/>
-  <testcase name="Should be able to create new users when the user logs in" classname="Users functionalities" time="2.323"/>
-  <testcase name="Should be able to delete a user" classname="Users functionalities" time="2.208"/>
-  <testcase name="Should be able to get the profile information" classname="Users functionalities" time="1.187"/>
-  <testcase name="Should be able to logout from the application" classname="Users functionalities" time="1.103"/>
-  <testcase name="Should be able to update a user" classname="Users functionalities" time="1.58"/>
+  <testcase name="Should be able to create new users when the user logs in" classname="Users functionalities" time="2.296"/>
+  <testcase name="Should be able to delete a user" classname="Users functionalities" time="2.183"/>
+  <testcase name="Should be able to get the profile information" classname="Users functionalities" time="1.053"/>
+  <testcase name="Should be able to logout from the application" classname="Users functionalities" time="1.102"/>
+  <testcase name="Should be able to update a user" classname="Users functionalities" time="1.686"/>
   <system-out><![CDATA[
 @users @smoke @newuser
 Scenario: Should be able to create new users when the user logs in ?[90m# src/test/resources/features/users.feature:7?[0m
